@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Produtividade - Vilmar</title>
+    <title>Painel Vilmar - Links Youtube em Vermelho</title>
 
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -16,7 +16,7 @@
           },
           "position": "bottom-left",
           "content": {
-            "message": "Usamos cookies para garantir que você obtenha a melhor experiência.",
+            "message": "Usamos cookies para garantir sua melhor experiência.",
             "dismiss": "Entendi!",
             "link":"Leia Mais.",
             "href": "https://www.plattenplaner.de/datenschutz"
@@ -26,7 +26,7 @@
     </script>
 
     <style>
-        /* ESTILO VISUAL */
+        /* ESTILO VISUAL BASE */
         body {
             background-color: #0f0f0f;
             color: #e0e0e0;
@@ -51,7 +51,7 @@
             font-size: 1.8rem;
         }
 
-        /* GRID INTELIGENTE: Ajusta colunas de 280px automaticamente */
+        /* GRID RESPONSIVA */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -60,19 +60,13 @@
             margin: 0 auto;
         }
 
-        /* ESTILO DOS BLOCOS */
+        /* ESTILO DOS CARDS */
         .grid-container > div:not(.SUP) {
             background-color: #1a1a1a;
             padding: 15px;
             border-radius: 6px;
             border: 1px solid #333;
             transition: 0.3s ease;
-        }
-
-        .grid-container > div:hover {
-            border-color: #FFc601;
-            transform: translateY(-3px);
-            background-color: #222;
         }
 
         h2, h3 {
@@ -84,21 +78,31 @@
             text-transform: uppercase;
         }
 
+        /* ESTILO PADRÃO DOS LINKS */
         a {
             color: #bbb;
             text-decoration: none;
             display: block;
             padding: 4px 0;
             font-size: 0.9rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            transition: 0.2s;
         }
 
         a:hover {
             color: #fff;
             padding-left: 5px;
             background: rgba(255, 198, 1, 0.1);
+        }
+
+        /* REGRA PARA LINKS DO YOUTUBE (VERMELHO) */
+        a[href*="youtube.com"] {
+            color: #ff4444 !important;
+            font-weight: 600;
+        }
+
+        a[href*="youtube.com"]:hover {
+            color: #ff0000 !important;
+            background: rgba(255, 68, 68, 0.1);
         }
 
         .sep { color: #444; font-size: 0.8rem; margin: 8px 0; }
@@ -117,132 +121,69 @@
             <a href="https://track.toggl.com/timer" target="_blank">Toggl Track</a>
             <a href="https://web.whatsapp.com/" target="_blank">WhatsApp</a>
             <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Gmail</a>
-            <a href="https://bmail.uol.com.br/" target="_blank">Bol</a>
-            <a href="https://savefrom.in.net/pt8/" target="_blank">Download Youtube</a>
-            <a href="https://sssinstagram.com/pt" target="_blank">Download Instagram</a>
             <a href="https://web.telegram.org/k/" target="_blank">Telegram</a>
             <a href="https://github.com/RossiFilho?tab=repositories" target="_blank">GitHub</a>
-            <h2>Organiza</h2>
-            <a href="https://drive.google.com/drive/u/0/my-drive" target="_blank">GoogleDrive</a>
-            <a href="https://docs.google.com/forms/u/2/" target="_blank">Formulários</a>
-            <a href="https://trello.com/vilmar72/boards" target="_blank">Trello</a>
-            <a href="https://calendar.google.com/calendar/u/0/r/week" target="_blank">Google Agenda</a>
-            <a href="https://miro.com/app/dashboard/" target="_blank">Miro</a>
-            <a href="https://app.clickup.com/" target="_blank">ClickUp</a>
-            <h2>Canais</h2>
-            <a href="https://br.pinterest.com/" target="_blank">Pinterest</a>
-            <a href="https://www.youtube.com/feed/subscriptions" target="_blank">Youtube</a>
-            <a href="https://www.primevideo.com/" target="_blank">Prime</a>
-            <a href="https://professional.cortecloud.com/" target="_blank">CorteCloud</a>
+            
+            <h2>Ferramentas Vídeo</h2>
+            <a href="https://savefrom.in.net/pt8/" target="_blank">Download Youtube</a>
+            <a href="https://sssinstagram.com/pt" target="_blank">Download Instagram</a>
+            <a href="http://youtube.com" target="_blank">Youtube (Home)</a>
         </div>
 
         <div>
-            <h2>Referências</h2>
+            <h2>IA & Referências</h2>
             <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>
             <a href="https://gemini.google.com/app" target="_blank">Gemini PRO</a>
             <a href="https://notebooklm.google.com/" target="_blank">notebookLM</a>
-            <div class="sep">------</div>
-            <a href="https://chat.forefront.ai/" target="_blank">AI.forefront</a>
-            <a href="https://typeset.io/" target="_blank">typeset.io</a>
-            <a href="https://app.fireflies.ai/setup" target="_blank">fireflies.ai</a>
             <a href="https://www.perplexity.ai/" target="_blank">perplexity.ai</a>
             <a href="https://app.heygen.com/home" target="_blank">heygen</a>
-            <h2>TRADING</h2>
+            
+            <h2>Trading</h2>
             <a href="https://app.nutror.com/curso/b54ad83e11057" target="_blank">Meta Trader 5</a>
-            <a href="https://br.investing.com/economic-calendar/" target="_blank">Índice Dolar</a>
-            <a href="https://br.advfn.com/investimentos/futuros/di-depositos-interfinanceiros/cotacoes" target="_blank">Taxa DI</a>
             <a href="https://br.tradingview.com/symbols/USDBRL/" target="_blank">Dolar Comercial</a>
-            <a href="https://mundoforex.com.br/relogio-mercado-financeiro/" target="_blank">Horários</a>
         </div>
 
         <div>
-            <h2>Empresa</h2>
+            <h2>Engenharia & Carreira</h2>
             <a href="https://www.contabilizei.com.br/" target="_blank">Contabilizei</a>
             <a href="https://creanet1.creasp.org.br/" target="_blank">Crea_ART</a>
-            <a href="https://slce.prefeitura.sp.gov.br/" target="_blank">SLC-e.Prefeitura</a>
-            <a href="https://www.creasp.org.br/servicos/" target="_blank">Crea Certidões</a>
-            <h2>Tirar Parede</h2>
             <a href="https://tirarparede.com.br" target="_blank">tirarparede</a>
             <a href="https://mautic.tirarparede.com.br" target="_blank">mautic</a>
             <a href="https://n8n.tirarparede.com.br" target="_blank">n8n</a>
-            <h2>Pós / Normas</h2>
-            <a href="https://institutobrasileiro178267.rm.cloudtotvs.com.br/" target="_blank">Inbec - Aluno</a>
-            <a href="https://app.tactiq.io/#/transcripts" target="_blank">Tactiq</a>
-            <a href="https://www.abntcatalogo.com.br/" target="_blank">ABNT Catalogo</a>
-            <a href="https://normadedesempenho.com.br/" target="_blank">Norma Desempenho</a>
+            <a href="https://app.tactiq.io/#/transcripts" target="_blank">Tactiq (Transcrição)</a>
         </div>
 
         <div>
-            <h2>Cursos</h2>
-            <a href="https://hotmart.com/pt-br/club/projeto-estrutural-na-pratica" target="_blank">Estruturas</a>
-            <a href="https://hotmart.com/pt-br/club/black-ahsd-vitalicia" target="_blank">AHSD_Hotmart</a>
-            <a href="https://ferramentasahsd.lovable.app/" target="_blank">AHSD_Ferramentas</a>
-            <a href="https://hub.asimov.academy/" target="_blank">Asimov</a>
-            <a href="https://cursos.dankicode.com/campus" target="_blank">Danki Code</a>
-            <a href="https://www.udemy.com/" target="_blank">Udemy</a>
-            <a href="https://padrepauloricardo.org/" target="_blank">Padre Paulo Ricardo</a>
-            <a href="https://app.nutror.com/v3/vitrine" target="_blank">PriceAction</a>
-        </div>
-
-        <div>
-            <h3>Engenharia (YT)</h3>
+            <h3>Engenharia (YouTube)</h3>
             <a href="https://www.youtube.com/@TVCreaSP" target="_blank">TVCreaSP</a>
-            <a href="https://www.youtube.com/@marceloakira." target="_blank">marceloakira</a>
-            <a href="https://www.youtube.com/@EngenheiraBrunaLacerda" target="_blank">EngBrunaLacerda</a>
-            <a href="https://www.youtube.com/@nauticola" target="_blank">nauticola</a>
-            <a href="https://www.youtube.com/@mayconmedeirosevoce" target="_blank">mayconmedeirosevoce</a>
-            <h3>Desenvolvimento</h3>
-            <a href="https://www.youtube.com/@guilhermefclfreire" target="_blank">guilhermefclfreire</a>
+            <a href="https://www.youtube.com/@marceloakira." target="_blank">Marcelo Akira</a>
+            <a href="https://www.youtube.com/@EngenheiraBrunaLacerda" target="_blank">Eng. Bruna Lacerda</a>
+            <a href="https://www.youtube.com/@nauticola" target="_blank">Nauticola</a>
+            
+            <h3>Desenvolvimento Pessoal</h3>
+            <a href="https://www.youtube.com/@guilhermefclfreire" target="_blank">Guilherme Freire</a>
             <a href="https://www.youtube.com/@CanaldoEslen" target="_blank">CanaldoEslen</a>
-            <a href="https://www.youtube.com/@pablomarcall" target="_blank">pablomarcall</a>
-            <a href="https://www.youtube.com/@GeracaodeValor" target="_blank">GeracaodeValor</a>
+            <a href="https://www.youtube.com/@pablomarcall" target="_blank">Pablo Marçal</a>
         </div>
 
         <div>
-            <h3>Saúde / Fitness</h3>
-            <a href="https://www.youtube.com/@NutricionistaPatriciaLeite" target="_blank">Patrícia Leite</a>
-            <a href="https://www.youtube.com/@DrFernandoLemos" target="_blank">Dr Fernando Lemos</a>
-            <a href="https://www.youtube.com/@carolborba" target="_blank">carolborba</a>
-            <a href="https://www.youtube.com/@dr.rodrigolopes-fisioterap8626" target="_blank">Rodigo Lopes Fisiot.</a>
-            <h3>Finanças</h3>
-            <a href="https://www.youtube.com/@BenZruel" target="_blank">BenZruel</a>
-            <h3>Cozinha / Distrações</h3>
+            <h3>Saúde & Finanças</h3>
+            <a href="https://www.youtube.com/@NutricionistaPatriciaLeite" target="_blank">Nutricionista Patrícia Leite</a>
+            <a href="https://www.youtube.com/@DrFernandoLemos" target="_blank">Dr. Fernando Lemos</a>
+            <a href="https://www.youtube.com/@BenZruel" target="_blank">Ben Zruel</a>
             <a href="https://www.youtube.com/@NovatosnaCozinhaBr" target="_blank">Novatos na Cozinha</a>
-            <a href="https://www.youtube.com/@CultCinemaClassics" target="_blank">Cult Cinema</a>
         </div>
 
         <div>
-            <h2>Tráfego e Infra</h2>
-            <a href="https://ads.google.com/" target="_blank">Google ADS</a>
-            <a href="https://analytics.google.com/" target="_blank">Analytics</a>
-            <a href="https://tagmanager.google.com/" target="_blank">GTM</a>
-            <a href="https://registro.br/" target="_blank">Registro.BR</a>
+            <h2>Tecnologia & Infra</h2>
             <a href="https://dash.cloudflare.com/" target="_blank">Cloudflare</a>
             <a href="https://agius.cloud/" target="_blank">Agius.Cloud</a>
             <a href="https://uptimerobot.com/" target="_blank">UptimeRobot</a>
-            <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">PageSpeed</a>
+            <a href="https://www.youtube.com/@AkitaOnRails" target="_blank">AkitaOnRails (YouTube)</a>
+            <a href="https://www.youtube.com/@FilipeDeschamps" target="_blank">Filipe Deschamps (YouTube)</a>
         </div>
 
-        <div>
-            <h2>Programação</h2>
-            <a href="https://www.youtube.com/@AkitaOnRails" target="_blank">AkitaOnRails</a>
-            <a href="https://www.youtube.com/@FilipeDeschamps" target="_blank">Filipe Deschamps</a>
-            <a href="https://www.youtube.com/@CursoemVideo" target="_blank">Curso em Vídeo</a>
-            <a href="https://www.youtube.com/@Rocketseat" target="_blank">Rocketseat</a>
-            <a href="https://www.youtube.com/@DevSoutinho" target="_blank">Dev Soutinho</a>
-            <a href="https://www.youtube.com/@AttekitaDev" target="_blank">Attekita Dev</a>
-        </div>
+    </div>
 
-        <div>
-            <h3>Religião / Política</h3>
-            <a href="https://www.youtube.com/@padrepauloricardo" target="_blank">Padre Paulo Ricardo</a>
-            <a href="https://www.youtube.com/@PadreJoseEduardo" target="_blank">Padre Jose Eduardo</a>
-            <a href="https://www.youtube.com/@PHVox" target="_blank">PHVox</a>
-            <a href="https://www.youtube.com/@CanalDoRuschel" target="_blank">Ruschel</a>
-            <h3>Livros</h3>
-            <a href="https://www.youtube.com/@AudiolivrosGIC" target="_blank">AudiolivrosGIC</a>
-            <a href="https://www.youtube.com/@wellbooks8527" target="_blank">Wellbooks</a>
-        </div>
-
-    </div> </body>
+</body>
 </html>
